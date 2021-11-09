@@ -17,7 +17,12 @@ const Home: NextPage<Props> = ({ content }) => {
     <>
       <h1>{attributes.hero_title}</h1>
       <p>{attributes.hero_description}</p>
-      <Image src={attributes.hero_image} alt="hero image" />
+      <Image
+        src={"/" + attributes.hero_image}
+        height={500}
+        width={500}
+        alt="hero image"
+      />
     </>
   );
 };
