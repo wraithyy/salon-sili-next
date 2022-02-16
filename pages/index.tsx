@@ -1,34 +1,45 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import {
+  Contact,
+  ContactProps,
+  HeroProps,
+  Info,
+  Hero,
+  InfoProps,
+  Pricing,
+  PricingProps,
+} from "../components/widgets";
 interface Props {
-  content: { attributes: HomeAttributes };
+  hero: { attributes: HeroProps };
+  info: { attributes: InfoProps };
+  pricing: { attributes: PricingProps };
+  contact: { attributes: ContactProps };
 }
-interface HomeAttributes {
-  hero_title: string;
-  hero_description: string;
-  hero_image: string;
-}
-
-const Home: NextPage<Props> = ({ content }) => {
-  const { attributes } = content;
+const Home: NextPage<Props> = ({ hero, info, pricing, contact }) => {
   return (
     <>
-      <h1>{attributes.hero_title}</h1>
-      <p>{attributes.hero_description}</p>
-      <Image
-        src={"/" + attributes.hero_image}
-        height={500}
-        width={500}
-        alt="hero image"
-      />
+      {hero && <Hero {...hero.attributes} />}
+      {info && <Info {...info.attributes} />}
+      {pricing && <Pricing {...pricing.attributes} />}
+      {contact && <Contact {...contact.attributes} />}
     </>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = await import(`../content/pages/${"home"}.md`);
-  return { props: { content: content.default } };
+  const hero = await import(`../content/landing/${"hero"}.md`);
+  const info = await import(`../content/landing/${"info"}.md`);
+  const pricing = await import(`../content/landing/${"pricing"}.md`);
+  const contact = await import(`../content/landing/${"contact"}.md`);
+  return {
+    props: {
+      hero: hero.default,
+      info: info.default,
+      contact: contact.default,
+      pricing: pricing.default,
+    },
+  };
 };
 export default Home;
