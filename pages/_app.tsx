@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Layout } from "../components/widgets";
 import { useRouter } from "next/dist/client/router";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
@@ -9,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return <Component {...pageProps} />;
   }
   return (
-    <Layout>
+    <Layout title="Salon Sili">
       <Component {...pageProps} />
     </Layout>
   );
