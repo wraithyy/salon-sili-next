@@ -18,7 +18,7 @@ export const Hero = ({ title, description, image }: HeroProps) => {
         <div
           className="absolute top-0 w-full h-full bg-center bg-cover"
           style={{
-            backgroundImage: `url('https://images.pexels.com/photos/7090361/pexels-photo-7090361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
+            backgroundImage: `url('${image}')`,
           }}
         >
           <span

@@ -34,7 +34,7 @@ export const Layout = (props: PropsWithChildren<Props>) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <Header links={links} transparent={false} />
+        <Header links={links} transparent={true} />
       </header>
       <main>{props.children}</main>
       <Footer />
