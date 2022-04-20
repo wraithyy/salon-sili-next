@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Coneria";
+    src: url("../public/fonts/ConeriaScript.ttf");
+  }
   html,
   body {
     scroll-behavior: smooth;

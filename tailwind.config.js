@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      title: ["Coneria", "sans-serif"],
+    },
   },
   plugins: [],
 };

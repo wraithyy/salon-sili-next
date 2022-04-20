@@ -14,20 +14,20 @@ export const Header = ({ links, transparent }: Props): ReactElement => {
     <nav
       className={
         (transparent
-          ? "top-0 absolute z-50 w-full"
+          ? "top-0 absolute z-50 w-full bg-black bg-opacity-50"
           : "relative bg-white shadow-lg") +
-        " flex flex-wrap items-center justify-between px-2 py-3 "
+        " flex flex-wrap items-center justify-between px-2 py-3"
       }
     >
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start ">
           <span
             className={
-              (transparent ? "text-white" : "text-gray-800") +
-              " title-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+              (transparent ? "text-amber-400" : "text-gray-800") +
+              " title-lg leading-relaxed inline-block mr-4 py-2 whitespace-nowrap font-title text-3xl"
             }
           >
-            Salón Sili
+            Salon SiLi
           </span>
           <button
             className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
